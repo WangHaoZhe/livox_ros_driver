@@ -86,10 +86,10 @@ Visualization Manager:
       Value: true
   Enabled: true
   Global Options:
-    Background Color: 48; 48; 48
+    Background Color: 0; 0; 0
     Default Light: true
     Fixed Frame: livox_frame
-    Frame Rate: 40
+    Frame Rate: 100
   Name: root
   Tools:
     - Class: rviz/Interact

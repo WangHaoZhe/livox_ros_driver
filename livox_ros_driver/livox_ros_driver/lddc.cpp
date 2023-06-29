@@ -256,13 +256,15 @@ void Lddc::FillPointsToPclMsg(PointCloud::Ptr& pcl_msg, \
     LivoxPointXyzrtl* src_point, uint32_t num) {
   LivoxPointXyzrtl* point_xyzrtl = (LivoxPointXyzrtl*)src_point;
   for (uint32_t i = 0; i < num; i++) {
-    pcl::PointXYZI point;
-    point.x = point_xyzrtl->x;
-    point.y = point_xyzrtl->y;
-    point.z = point_xyzrtl->z;
-    point.intensity = point_xyzrtl->reflectivity;
-    ++point_xyzrtl;
-    pcl_msg->points.push_back(point);
+      pcl::PointXYZI point;
+      if (point_xyzrtl->x > 3.0f && point_xyzrtl->x < 4.0f) {
+          point.x = point_xyzrtl->x;
+          point.y = point_xyzrtl->y;
+          point.z = point_xyzrtl->z;
+          point.intensity = point_xyzrtl->reflectivity;
+      }
+      ++point_xyzrtl;
+      pcl_msg->points.push_back(point);
   }
 }
 
