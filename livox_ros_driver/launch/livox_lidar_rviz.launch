@@ -29,6 +29,10 @@
 	<node name="livox_lidar_publisher" pkg="livox_ros_driver"
 	      type="livox_ros_driver_node" required="true"
 	      output="screen" args="$(arg cmdline_arg)"/>
+	      
+	<node name="points_and_lines" pkg="using_markers"
+	      type="points_and_lines" required="true"
+	      output="screen" args="$(arg cmdline_arg)"/>
 
 	<group if="$(arg rviz_enable)">
 		<node name="rviz" pkg="rviz" type="rviz" respawn="true"
